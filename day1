@@ -1,8 +1,51 @@
-list = open('calories.txt')
+with open('calories.txt', 'r') as f:
+    lines = f.readlines()
 
-def elf_total():
-    sum(list)
+max_results = 0
+cur_results = 0
 
-print(elf_total)
+for elf in lines:
+    if elf != '\n':
+        cur_results += int(elf)
+    else:
+        if cur_results > max_results:
+            max_results = cur_results
+        cur_results = 0
+
+print(max_results)
+
+one, two, three = 0, 0, 0
+cur_results = 0
+for elf in lines:
+    if elf != '\n':
+        cur_results += int(elf)
+    else:
+        if cur_results > three:
+            if cur_results < two:
+                three = cur_results
+            elif cur_results < one:
+                two, three = cur_results, two
+            else:
+                one, two, three = cur_results, one, two
+        cur_results = 0
+
+print(sum([one,two,three]))   
 
 
+
+# data = []
+# for line in calories:
+#     data.append(line.split("\n"))
+
+# elfCalories = data.split('\n\n')
+
+
+# result = map(addition, elfCalories)
+# print(list(result))
+
+
+# with open('calories.txt', 'r') as f:
+#     s = str(f)
+#     data = [int(x) for x in f]
+
+# print(remove(calories))

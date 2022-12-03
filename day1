@@ -32,7 +32,7 @@ for elf in lines:
 print(sum([one,two,three]))   
 
 
-
+"""What a failllllll....."""
 # data = []
 # for line in calories:
 #     data.append(line.split("\n"))

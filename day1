@@ -1,6 +1,0 @@
-list = open('calories.txt')
-
-def elf_total():
-    sum(list)
-
-print(elf_total)

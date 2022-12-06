@@ -1,6 +1,4 @@
-# with open('Day 2/strategy_guide.txt','r') as f:
-#     lines = f.readlines()
-
+"""
 # Loss = X, Draw = Y, Win = Z
 outcome_score = {"X":0, "Y":3, "Z":6}
 
@@ -24,13 +22,6 @@ def solution(evaluate_function, shape_score, duel_score):
 
 print(solution(evaluate_function_task_1, shape_score, duel_score))
 print(solution(evaluate_function_task_2, duel_score2, outcome_score))
+"""
 
-# player_1 = 0
-# player_2 = 0
-
-# # Your total score is the sum of your scores for each round
-# total_score = 0
-
-
-
-
+file = open('Day 2/strategy_guide.txt','r')

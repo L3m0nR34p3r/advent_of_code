@@ -50,9 +50,20 @@ def split(string):
 # Find the matching characters between the split sections.
 def findmatch(string1, string2):
     match = set(string1).intersection(string2)
-    print(match)
+    return (match)
     
+def get_value(input):
+    file2 = open('Day 3/values.txt', 'r')
+    for line in file2:
+        item = [0]
+        value = [2]
 
+
+# iterate through each line and find the letter(s) that match!
 for line in file:
     comp1, comp2 = split(line)
     findmatch(comp1,comp2)
+    print
+
+
+

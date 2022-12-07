@@ -30,4 +30,29 @@ In the above example, the priority of the item type that appears in both compart
 
 Find the item type that appears in both compartments of each rucksack. What is the sum of the priorities of those item types?
 """
+# Open the file
 
+file = open('Day 3/item_list.txt','r')
+
+
+# Split the string into two equal parts down the middle.
+def split(string):
+    n = len(string)
+    if n%2 == 0:
+        string1 = string[0:n//2]
+        string2 = string[n//2:]
+        return (string1, string2)
+    else:
+        string1 = string[0:(n//2+1)]
+        string2 = string[(n//2+1):]
+        return (string1, string2)
+    
+# Find the matching characters between the split sections.
+def findmatch(string1, string2):
+    match = set(string1).intersection(string2)
+    print(match)
+    
+
+for line in file:
+    comp1, comp2 = split(line)
+    findmatch(comp1,comp2)

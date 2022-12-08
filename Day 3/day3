@@ -1,5 +1,5 @@
 # Open the file
-file = open('Day 3/item_list.txt','r')
+file = open('Day 3/item_list.txt','r').read().splitlines()
 
 # Split the string into two equal parts down the middle.
 def split(string):
@@ -32,6 +32,21 @@ for line in file:
     match_found = findmatch(comp1,comp2)
     num = get_value(match_found)
     total += int(num)
-print(total)
+# print(total)
 
-file.close()
+tri, comchars =[],[]
+for i in range(1,len(file)): # iterate through each line of item_list
+    tri.append(file[-i]) #add lines to tri value(backwards so it doesn't skip a line)
+    if i % 3 == 0: #modulo: find if the line(i) number has a remander of 0 when devided by 3
+        print(f"{tri}\n") # Print that crap ooout
+        charset = ''.join(set(tri[0]) & set(tri[1]) & set(tri[2])) #loop: Join each line into a set
+        comchars.append(charset)
+        tri=[] #Reset the tri variable for next 3 lines
+score = 0
+print(comchars)
+
+#convert everything to a value and add it to score
+for comchar in comchars:
+    if comchar.islower(): score += ord(comchar) - 96
+    if comchar.isupper(): score += ord(comchar) - 38
+print(score)

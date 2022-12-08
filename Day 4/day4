@@ -1,0 +1,44 @@
+def range_contained(r1,r2):
+    x1,x2 = r1.start, r1.stop
+    y1,y2 = r2.start, r2.stop
+    return (y1 <= x1 <= y2 and y1 <= x2 <= y2) or (x1 <= y1 <= x2 and x1 <= y2 <= x2)
+
+def range_overlaps(r1, r2):
+  """Whether range1 and range 2 overlap."""
+  x1, x2 = r1.start, r1.stop
+  y1, y2 = r2.start, r2.stop
+  return x1 <= y2 and y1 <= x2
+
+data = open('Day 4/input.txt', 'r').read().splitlines() # Reading line by line
+data = [x.split(',') for x in data] # Splits the pairs by comma
+data = [[x.split('-'), y.split('-')] for x,y in data] # Splits the ranges by - and returns numbers
+
+print(data)
+
+r=[]
+for x,y in data:
+    r1 = range(int(x[0]),int(x[1]))
+    r2 = range(int(y[0]),int(y[1]))
+    r.append([r1,r2])
+
+count=0
+
+for r1,r2 in r:
+    if range_contained(r1,r2): 
+        count += 1
+print(count)
+
+count=0
+
+for r1,r2 in r:
+    if range_overlaps(r1,r2): 
+        count += 1
+print(count)
+
+# pairs = []
+
+# for i in lines:
+#     i.strip("\n").split('-')
+#     print(i)
+#     pairs.append(i)
+# # print(pairs)

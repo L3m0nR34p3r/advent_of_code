@@ -1,13 +1,41 @@
+def reorder(mover):
+    data = open("Day 5/input.txt", "r").read().splitlines()
+    data = [ x.replace('    ',' [@]') for x in data ]
+    data = [ x.replace('[','') for x in data ]
+    data = [ x.replace(']','') for x in data ]
+    print (data)
+
+    # This will seperate the crate input from the move input
+    for i in range(0,len(data)-1): 
+        if data[i] == ' 1   2   3   4   5   6   7   8   9 ':
+            break
+        i+=1
+        print (i)
+
+    stack = []
+    stack = [ x.split(' ') for x in data[:i]]
+    print(stack)
+    stack.reverse()
+    stack = [ list(x) for x in zip(*stack)] #zip function is WILD!!!
+    print(stack)
+
+reorder(9000)
 
 
 
-# data = open("Day 5/input.txt", "r").read().splitlines()
-# data = [ x.replace('    ',' [@]') for x in data ]
-# data = [ x.replace('[','') for x in data ]
-# data = [ x.replace(']','') for x in data ]
-# print (data)
+# """zip() example:"""
 
-# for i in range(0,len(data)-1):
-#     if data[i] == '1 2 3 4 5 6 7 8 9 ':
-#         break
-#     i+=1
+# name = [ "Manjeet", "Nikhil", "Shambhavi", "Astha" ]
+# roll_no = [ 4, 1, 3, 2 ]
+ 
+# # using zip() to map values
+# mapped = zip(name, roll_no)
+ 
+# print(set(mapped))
+
+# # example 2: enumerate
+# names = ['Mukesh', 'Roni', 'Chari']
+# ages = [24, 50, 18]
+ 
+# for i, (name, age) in enumerate(zip(names, ages)):
+#     print(i, name, age)

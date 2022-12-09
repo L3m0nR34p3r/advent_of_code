@@ -3,23 +3,55 @@ def reorder(mover):
     data = [ x.replace('    ',' [@]') for x in data ]
     data = [ x.replace('[','') for x in data ]
     data = [ x.replace(']','') for x in data ]
-    print (data)
+    # print (data)
 
     # This will seperate the crate input from the move input
     for i in range(0,len(data)-1): 
         if data[i] == ' 1   2   3   4   5   6   7   8   9 ':
             break
         i+=1
-        print (i)
+        # print (i)
 
     stack = []
     stack = [ x.split(' ') for x in data[:i]]
-    print(stack)
     stack.reverse()
     stack = [ list(x) for x in zip(*stack)] #zip function is WILD!!!
-    print(stack)
 
-reorder(9000)
+    for a in range(0,len(stack)):
+        while '@' in stack[a]:
+            stack[a].remove('@')
+    # print(stack)
+
+    moves = []
+    moves = [x for x in data[i+2:]] # pull move lines from data
+    moves = [ (x.split()) for x in moves] # split up each item
+    moves = [ (x,y,z) for _,x,_,y,_,z in moves] # assign each number in line to a variable
+    moves = [ list(map(int,x)) for x in moves] # send new assignments to 'moves' as a list
+    # print(moves)
+
+    for m in moves: # move #1 is 3 from 5 to 7
+        x = []
+        for i in range(0,m[0]):
+            x.append(stack[m[1]-1].pop())
+        if mover == '1':
+            x.reverse()
+        stack[m[2]-1] += x
+        # print (x)
+
+    top = ''
+    for i in range(0,9):
+        top += ''.join(stack[i][-1])
+    return (top)
+
+    # for m in range(10,len(data)):
+    #     moves.strip('move')
+    #     moves.strip('from')
+    #     moves.strip('to')
+    # print(moves)
+
+print(reorder('0'))
+print(reorder('1'))
+
 
 
 

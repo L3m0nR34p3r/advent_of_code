@@ -8,6 +8,8 @@ def fours(data):
         chunked_list.append(data[i:i+split])
     print(chunked_list)
 
+# def no_dup(x):
+    
 fours(data)
 
 # four = [(x.split()) for x in four]

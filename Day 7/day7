@@ -1,0 +1,10 @@
+data = open('Day 7/input.txt', 'r').read().splitlines()
+
+dirsize={}
+path=[]
+for line in data:
+    cmd = line.startswith('$ cd')
+    if cmd:
+        if line.startswith('& cd '):
+            _,_, directory = line.split()
+            

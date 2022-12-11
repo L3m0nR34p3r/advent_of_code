@@ -1,38 +1,17 @@
-data = open('Day 6/input.txt','r').read()
+data = open('Day 6/input.txt','r', encoding="utf-8").read()
 
-# Need to find a way to advance this by one letter every time it runs. And add a way to check if there's a duplicate letter in a chunk.
-def fours(x): 
-    chunked_list = list()
-    for i in range(0, len(x),4):
-        chunked_list.append(x[i:i+4])
-        break
-    print(chunked_list)
-
-# Find a way to start at value 0, then move up one by one
-
-fours(data)
-
-for x, new_value in enumerate(data):
-    chunk = list()
-    # for i in new_value():
-        #not sure how to run this yet.... I want to iterate through each letter
-    print(x, ",", new_value)
-
-# for i in data:
-#     start = 0
-#     data(range(0,len(data),4))
-#     start = start + 1
-#     print(start)
-
-# print(list(data))
-
-# def no_dup(x):
-
-# four = [(x.split()) for x in four]
-
-# # for x in range([0],[3]):
-# print(four)
-
-# # for index, value in enumerate(four):
-# #     if index % 4 == 0:
-# #         # print(index, value)
+def check(num):
+    start = 0
+    quad = []
+    for d in data:
+        start+=1
+        # print(start)
+        quad.append(d)
+        # print(quad)
+        quad = quad[-num:]
+        # print(quad)
+        if len(set(quad)) == num:
+            print(start,*quad)
+            break
+check(4)
+# check(14)

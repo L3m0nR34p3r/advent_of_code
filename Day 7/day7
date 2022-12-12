@@ -1,10 +1,54 @@
 data = open('Day 7/input.txt', 'r').read().splitlines()
 
+dirs={}
+path=[]
+for line in data:
+    a = line.strip().split()
+    if a[0] == '$':
+        if a[1] == 'cd':
+            if a[2] == '..':
+                path.pop
+            else:
+                path.append(a[2])
+                print(path)
+
+
+
+
+
+
+
+
+
+
+            
+# cd / goes to root
+# cd .. goes back a layer
+# cd x moves in a layer (to 'x')
+# ls means list content of dir
+
+
+'''
 dirsize={}
 path=[]
 for line in data:
     cmd = line.startswith('$ cd')
     if cmd:
-        if line.startswith('& cd '):
+        if line.startswith('$ cd '):
+            print(line.split())
             _,_, directory = line.split()
-            
+            if directory == '..':
+                path.pop
+            else:
+                path.append(directory)
+        print(path)
+    else:
+        cwd = '-'.join(path)
+        files = dirsize.get(cwd, [])
+        atom = line.split()
+        if atom[0] == 'dir':
+            atom[1] = cwd + '-' + atom[1]
+        files.append(atom)
+        dirsize[cwd] = files
+        print()
+        '''

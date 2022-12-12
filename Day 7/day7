@@ -21,6 +21,7 @@ for line in data:
 
 
 
+
             
 # cd / goes to root
 # cd .. goes back a layer

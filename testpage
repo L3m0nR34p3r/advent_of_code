@@ -1,0 +1,61 @@
+@font-face {
+    font-family: Gotham;
+    src: url(https://www.blanchardco.net/wp-content/themes/inspiro/assets/fonts/gotham-black-webfont.woff);
+    font-weight: normal;
+    font-style: black;
+   } 
+
+@font-face {
+    font-family: Gotham;
+    src: url(https://www.blanchardco.net/wp-content/themes/inspiro/assets/fonts/gotham-bold-webfont.woff);
+    font-weight: normal;
+    font-style: bold;
+   } 
+
+@font-face {
+    font-family: Gotham;
+    src: url(https://www.blanchardco.net/wp-content/themes/inspiro/assets/fonts/gotham-book-webfont.woff);
+    font-weight: normal;
+    font-style: book;
+   } 
+
+@font-face {
+    font-family: Gotham;
+    src: url(https://www.blanchardco.net/wp-content/themes/inspiro/asset/fonts/gotham-light-webfont.woff);
+    font-weight: normal;
+    font-style: light;
+   } 
+
+@font-face {
+    font-family: Gotham;
+    src: url(https://www.blanchardco.net/wp-content/themes/inspiro/assets/fonts/gotham-medium-webfont.woff);
+    font-weight: normal;
+    font-style: medium;
+   } 
+
+@font-face {
+    font-family: Gotham;
+    src: url(https://www.blanchardco.net/wp-content/themes/inspiro/assets/fonts/gotham-thin-webfont.woff);
+    font-weight: normal;
+    font-style: thin;
+   } 
+
+@font-face {
+    font-family: Gotham;
+    src: url(https://www.blanchardco.net/wp-content/themes/inspiro/assets/fonts/gotham-ultra-webfont.woff);
+    font-weight: normal;
+    font-style: ultra;
+   } 
+
+@font-face {
+    font-family: Gotham;
+    src: url(https://www.blanchardco.net/wp-content/themes/inspiro/assets/fonts/gotham-xlight-webfont.woff);
+    font-weight: normal;
+    font-style: xlight;
+   } 
+
+
+
+body {
+	font-family: "Gotham-light";
+}

@@ -1,8 +1,7 @@
 input = open("2023/input.txt",'r').read().splitlines()
 
 numbers = []
-
-numdict = ["one","two","three","four","five","six","seven","eight","nine"]
+numlist = ["one","two","three","four","five","six","seven","eight","nine"]
 
 lettonum = {"one": 1,
             "two": 2,
@@ -14,12 +13,24 @@ lettonum = {"one": 1,
             "eight": 8,
             "nine": 9}
 
-for line in input:
-        u = 1
-        for x in numdict:
-                print(f"line{u}: {(line.find(x))}")
-                u += 1
-                
+
+def text2int(textnum):
+    units = ["one", "two", "three", "four", "five", "six", "seven", "eight","nine"]
+    if textnum.find(units) >=0:
+        
+      
+
+for x in input:
+   print (text2int(x))
+
+
+# for line in input:
+#         print(f"{line}")
+#         for x in numlist:
+#                 if line.find(x) >= 0:
+#                         print(f"Found match from  numlist: {line.find(x)}")
+#                 else: 
+#                         continue
 
 
 
